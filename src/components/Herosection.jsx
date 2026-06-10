@@ -29,35 +29,38 @@ const item = {
 
 const Herosection = () => {
   return (
-    <section className="min-h-screen flex flex-col md:flex-row items-center mt-15 md:mt-0 justify-between px-6 md:px-16 gap-10">
+    <section className="min-h-screen flex flex-col md:flex-row items-center justify-center md:justify-between px-6 md:px-16 py-24 md:py-0 gap-10">
       {/* TEXT */}
       <motion.div
-        className="flex-1 text-center md:text-left mt-10 md:mt-40"
+        className="flex-1 text-center md:text-left"
         variants={container}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
       >
-        <motion.p className="text-lg mb-2 text-white font-bold" variants={item}>
+        <motion.p
+          className="text-base sm:text-lg mb-2 text-white font-bold"
+          variants={item}
+        >
           Hello, I'm
         </motion.p>
 
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-blue-500"
+          className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-blue-500"
           variants={item}
         >
           Ehiguese Deborah Osekhimen
         </motion.h1>
 
         <motion.h2
-          className="text-lg sm:text-xl md:text-2xl font-medium mb-6 text-blue-400"
+          className="text-base sm:text-xl md:text-2xl font-medium mb-6 text-blue-400"
           variants={item}
         >
           Frontend Developer
         </motion.h2>
 
         <motion.p
-          className="max-w-xl mx-auto md:mx-0 mb-8 leading-relaxed text-gray-400"
+          className="max-w-xl mx-auto md:mx-0 mb-8 leading-relaxed text-gray-400 text-sm sm:text-base"
           variants={item}
         >
           I'm a detail-oriented and creative Frontend Developer passionate about
@@ -78,8 +81,9 @@ const Herosection = () => {
       </motion.div>
 
       {/* IMAGE */}
+      {/* IMAGE */}
       <motion.div
-        className="flex-1 flex justify-center w-full mt-20 md:mt-30"
+        className="flex-1 flex justify-center md:justify-end items-center w-full px-6 md:px-0"
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, type: "spring" }}
@@ -88,18 +92,7 @@ const Herosection = () => {
         <img
           src={image}
           alt="Ehiguese Deborah Osekhimen"
-          className="
-            w-full
-            max-w-70
-            sm:max-w-88
-            md:max-w-md
-            lg:max-w-125
-            h-auto
-            ml-23
-            rounded-2xl
-            shadow-2xl
-            object-cover
-          "
+          className="w-full max-w-xs sm:max-w-sm md:w-80 lg:w-96 h-auto rounded-2xl shadow-2xl object-cover"
         />
       </motion.div>
     </section>

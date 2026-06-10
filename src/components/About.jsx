@@ -35,20 +35,20 @@ const About = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
-      className="min-h-screen px-4 sm:px-6 md:px-12 lg:px-16 py-16 text-white"
+      className="min-h-screen px-4 sm:px-8 md:px-12 lg:px-16 py-20 text-white"
     >
       {/* Title */}
       <motion.h1
-        className="text-3xl sm:text-4xl md:text-5xl font-bold mt-10 mb-8 md:mb-12 text-center md:text-left"
+        className="text-3xl sm:text-4xl md:text-5xl font-bold mt-6 mb-8 md:mb-12 text-center md:text-left"
         variants={item}
       >
         About Me
       </motion.h1>
 
-      <div className="max-w-4xl mx-auto md:mx-0 space-y-6 md:space-y-8 text-gray-300 leading-relaxed">
+      <div className="max-w-3xl mx-auto md:mx-0 space-y-5 text-gray-300 leading-relaxed">
         {/* Intro */}
-        <motion.p className="text-base sm:text-lg md:text-xl" variants={item}>
-          I’m{" "}
+        <motion.p className="text-base sm:text-lg" variants={item}>
+          I'm{" "}
           <span className="text-blue-400 font-semibold">
             Ehiguese Deborah Osekhimen
           </span>
@@ -81,18 +81,15 @@ const About = () => {
         </motion.p>
 
         {/* CTA */}
-        <motion.div
-          className="pt-8 md:pt-10 text-center md:text-left"
-          variants={item}
-        >
+        <motion.div className="pt-8 text-center md:text-left" variants={item}>
           <p className="text-gray-400 mb-4 text-sm sm:text-base">
-            Let’s work together and build something amazing.
+            Let's work together and build something amazing.
           </p>
 
           <Link to="contact" smooth={true} duration={500}>
             <Btn
               text="Contact Me"
-              className="bg-blue-500 hover:bg-blue-700 text-white text-center font-bold py-3 px-6 rounded-lg transition duration-300 cursor-pointer"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 cursor-pointer"
             />
           </Link>
         </motion.div>

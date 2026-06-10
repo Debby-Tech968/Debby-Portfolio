@@ -17,7 +17,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="bg-white flex justify-between items-center px-6 lg:px-15 py-4 fixed top-0 left-0 w-full shadow-md z-50">
+    <div className="bg-white flex justify-between items-center px-6 lg:px-15 py-4 fixed top-0 left-0 w-full shadow-lg z-50">
       {/* Logo */}
       <h1 className="text-2xl font-bold">EHIGUESE</h1>
 
