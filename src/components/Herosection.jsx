@@ -1,6 +1,6 @@
 import React from "react";
 import Btn from "./Btn";
-import image from "../assets/Debby1.JPG";
+import image from "../assets/Debby1.jpg";
 import { motion } from "framer-motion";
 
 const container = {
