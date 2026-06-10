@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <footer className="relative text-white py-10 mt-16 border-t border-gray-800">
-      <div className="max-w-6xl px-4 sm:px-6 md:px-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-16">
         {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
           {/* LEFT - BRAND */}
@@ -62,13 +62,15 @@ const Footer = () => {
         </div>
 
         {/* BACK TO TOP */}
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition"
-          title="Back to top"
-        >
-          ↑
-        </button>
+        <div className="flex justify-center mt-10">
+          <button
+            onClick={scrollToTop}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full shadow-lg transition text-sm font-medium"
+            title="Back to top"
+          >
+            ↑ Back to Top
+          </button>
+        </div>
       </div>
     </footer>
   );
