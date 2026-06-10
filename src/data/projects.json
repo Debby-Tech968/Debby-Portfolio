@@ -1,0 +1,26 @@
+[
+  {
+    "title": "The Elect Solution",
+    "description": "A fully responsive e-commerce web application built with React and Tailwind CSS. It features a structured product listing system, reusable UI components, and a map interface that enhances user experience through location-based interaction and improved navigation flow.",
+    "technologies": ["React", "Tailwind CSS", "HTML"],
+    "image": "/assets/Project1.png",
+    "live": "https://the-elect-solution.vercel.app/",
+    "github": "https://github.com/Debby-Tech968/The-Elect-Solution"
+  },
+  {
+    "title": "Job Listing Website",
+    "description": "A modern job listing platform built with React and Tailwind CSS. It delivers a clean, responsive interface for exploring job opportunities with dynamic rendering of listings and an optimized user experience across all screen sizes.",
+    "technologies": ["React", "Tailwind CSS", "JavaScript"],
+    "image": "/assets/Project2.png",
+    "live": "https://job-listing-app-liard.vercel.app/",
+    "github": "https://github.com/Debby-Tech968/Job-listing-app"
+  },
+  {
+    "title": "E-commerce Website",
+    "description": "A responsive e-commerce web application built with HTML, JavaScript, and Tailwind CSS. It includes product listing functionality, interactive cart behavior, authentication UI flow, and a well-structured layout focused on usability and smooth user interaction.",
+    "technologies": ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+    "image": "/assets/Project3.png",
+    "live": "https://e-commerce-app.vercel.app/",
+    "github": "https://github.com/Debby-Tech968/E-commerce-website"
+  }
+]
