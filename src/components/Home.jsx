@@ -9,7 +9,7 @@ import Footer from "./Footer";
 const Home = () => {
   return (
     <div
-      className="bg-[#0D0D0D] w-full"
+      className="bg-[#0D0D0D] w-full overflow-x-hidden overflow-y-hidden"
       style={{
         backgroundImage: `
           linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
