@@ -22,5 +22,23 @@
     "image": "/assets/Project3.png",
     "live": "https://e-commerce-app.vercel.app/",
     "github": "https://github.com/Debby-Tech968/E-commerce-website"
+  },
+
+  {
+    "title": "Akademi Dashboard",
+    "description": "A responsive school management dashboard built with React and Tailwind CSS. It includes student, teacher, finance, food, chat, calendar, user, and activity management, using reusable components and React Router for a seamless user experience across all devices.",
+    "technologies": [
+      "React",
+      "React Router",
+      "Tailwind CSS",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Recharts"
+    ],
+    "image": "/assets/Project4.png",
+    "live": "https://akademi-dashboard-1.vercel.app/",
+    "github": "https://github.com/Debby-Tech968/Akademi-Dashboard"
   }
+
 ]
