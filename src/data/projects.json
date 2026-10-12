@@ -1,44 +1,66 @@
 [
   {
+    "id": "the-elect-solution",
     "title": "The Elect Solution",
-    "description": "A fully responsive e-commerce web application built with React and Tailwind CSS. It features a structured product listing system, reusable UI components, and a map interface that enhances user experience through location-based interaction and improved navigation flow.",
-    "technologies": ["React", "Tailwind CSS", "HTML"],
+    "category": "E-Commerce",
+    "featured": true,
+    "description": "A comprehensive e-commerce platform featuring a structured product catalog, reusable component architecture, and a real-time interactive map interface that streamlines location-based customer interaction and seamless ordering flow.",
+    "highlights": [
+      "Interactive map integration for customer delivery & locations",
+      "Modular product filtering & responsive catalog grid",
+      "Smooth checkout and modern UI component flow"
+    ],
+    "technologies": ["React", "Tailwind CSS", "JavaScript", "HTML5"],
     "image": "/assets/Project1.png",
     "live": "https://the-elect-solution.vercel.app/",
     "github": "https://github.com/Debby-Tech968/The-Elect-Solution"
   },
   {
-    "title": "Job Listing Website",
-    "description": "A modern job listing platform built with React and Tailwind CSS. It delivers a clean, responsive interface for exploring job opportunities with dynamic rendering of listings and an optimized user experience across all screen sizes.",
-    "technologies": ["React", "Tailwind CSS", "JavaScript"],
+    "id": "akademi-dashboard",
+    "title": "Akademi School Dashboard",
+    "category": "Dashboard & Analytics",
+    "featured": true,
+    "description": "An enterprise-grade school management and analytics dashboard with dedicated submodules for students, teachers, finance tracking, and activities. Built with reusable modular components, React Router navigation, and dynamic chart visualizations.",
+    "highlights": [
+      "Interactive Recharts analytics for financial & student trends",
+      "Multi-page administrative navigation with React Router",
+      "Activity logs, calendar scheduling, and user management modules"
+    ],
+    "technologies": ["React", "Tailwind CSS", "Recharts", "React Router", "JavaScript"],
+    "image": "/assets/Project4.png",
+    "live": "https://akademi-dashboard-1.vercel.app/",
+    "github": "https://github.com/Debby-Tech968/Akademi-Dashboard"
+  },
+  {
+    "id": "job-listing-platform",
+    "title": "Job Listing Platform",
+    "category": "Web Applications",
+    "featured": false,
+    "description": "A high-performance job discovery platform engineered with React and Tailwind CSS. Provides job seekers with quick filtering across roles, categories, and locations, accompanied by clean modern typography and smooth card interactions.",
+    "highlights": [
+      "Dynamic rendering of job listings with real-time query filtering",
+      "Responsive layout optimized for handheld to desktop viewports",
+      "Accessible tag-based navigation and structured modal details"
+    ],
+    "technologies": ["React", "Tailwind CSS", "JavaScript", "Responsive Design"],
     "image": "/assets/Project2.png",
     "live": "https://job-listing-app-liard.vercel.app/",
     "github": "https://github.com/Debby-Tech968/Job-listing-app"
   },
   {
-    "title": "E-commerce Website",
-    "description": "A responsive e-commerce web application built with HTML, JavaScript, and Tailwind CSS. It includes product listing functionality, interactive cart behavior, authentication UI flow, and a well-structured layout focused on usability and smooth user interaction.",
-    "technologies": ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+    "id": "ecommerce-store",
+    "title": "Interactive E-Commerce Store",
+    "category": "E-Commerce",
+    "featured": false,
+    "description": "A responsive shopping application featuring real-time interactive cart state management, product catalog filters, authentication UI flow, and smooth transition feedback for customers.",
+    "highlights": [
+      "Full interactive cart system with item quantity & total calculation",
+      "Authentication and onboarding UI flows",
+      "Tailwind-powered fluid responsive grid layout"
+    ],
+    "technologies": ["JavaScript", "HTML5", "CSS3", "Tailwind CSS"],
     "image": "/assets/Project3.png",
     "live": "https://e-commerce-app.vercel.app/",
     "github": "https://github.com/Debby-Tech968/E-commerce-website"
-  },
-
-  {
-    "title": "Akademi Dashboard",
-    "description": "A responsive school management dashboard built with React and Tailwind CSS. It includes student, teacher, finance, food, chat, calendar, user, and activity management, using reusable components and React Router for a seamless user experience across all devices.",
-    "technologies": [
-      "React",
-      "React Router",
-      "Tailwind CSS",
-      "JavaScript",
-      "HTML",
-      "CSS",
-      "Recharts"
-    ],
-    "image": "/assets/Project4.png",
-    "live": "https://akademi-dashboard-1.vercel.app/",
-    "github": "https://github.com/Debby-Tech968/Akademi-Dashboard"
   }
-
 ]
