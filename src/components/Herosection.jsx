@@ -27,8 +27,10 @@ const Typewriter = ({ words, delay = 2200, typingSpeed = 65, deletingSpeed = 40 
           setCurrentText(currentWord.substring(0, currentText.length - 1));
         }, deletingSpeed);
       } else {
-        setIsDeleting(false);
-        setWordIndex((prev) => (prev + 1) % words.length);
+        timer = setTimeout(() => {
+          setIsDeleting(false);
+          setWordIndex((prev) => (prev + 1) % words.length);
+        }, 300);
       }
     } else {
       if (currentText.length < currentWord.length) {
