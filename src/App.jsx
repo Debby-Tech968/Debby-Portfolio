@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { scroller } from "react-scroll";
+import { Toaster } from "sonner";
 import Home from "./components/Home";
 
 const RouteHandler = () => {
@@ -26,7 +27,18 @@ const RouteHandler = () => {
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-[#080C14] text-slate-100 flex flex-col justify-between selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div className="min-h-screen w-full bg-black text-zinc-100 flex flex-col justify-between selection:bg-cyan-500/30 selection:text-cyan-200">
+      <Toaster
+        theme="dark"
+        position="bottom-right"
+        toastOptions={{
+          style: {
+            background: "#111111",
+            border: "1px solid #27272a",
+            color: "#ffffff",
+          },
+        }}
+      />
       <Navbar />
       <Routes>
         <Route path="/" element={<RouteHandler />} />

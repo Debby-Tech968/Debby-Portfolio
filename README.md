@@ -21,9 +21,13 @@ Deborah bridges an analytical background as a graduate of **Human Anatomy (Ladok
 ## 🌟 Key Features & Highlights
 
 - **⚡ Blazing Fast Architecture:** Built on Vite 8 and React 19 with sub-second production builds and near-instant Hot Module Replacement.
-- **🎨 Glassmorphism & Modern Obsidian Aesthetic:** Deep-slate dark theme accented with cyan/indigo radiance, frosted glass cards, and fluid grid patterns.
-- **📱 100% Mobile-First Responsive Design:** Rigorously optimized across mobile viewports, tablets, laptops, and ultra-wide screens.
-- **🧭 Dynamic Navigation & Scrollspy:** Glassmorphic sticky navbar with active section detection, smooth scrolling, and an animated mobile menu.
+- **🖤 Solid Pitch-Black Aesthetic:** High-contrast solid black theme (`#000000`) with sleek charcoal card surfaces (`#0C0C0C`), crisp hairline borders, and conforming electric cyan & emerald highlights.
+- **📱 100% Responsive on All Devices:** Meticulously engineered from compact handheld devices (320px+) to tablets, notebooks, and 4K widescreen displays with zero horizontal overflow.
+- **🎞️ Infinite Tech Marquee:** Seamless, infinite auto-scrolling ribbon (`react-fast-marquee`) showcasing production technologies with official logos.
+- **⌨️ Dynamic Typewriter Hero:** Animated headline (`react-type-animation`) dynamically presenting Deborah's core specializations.
+- **📊 Animated Metric Counters:** Real-time animated number counters (`react-countup`) showcasing production projects and responsive UI metrics.
+- **🔔 Sonner Toast Notifications:** Modern, low-friction toast feedback (`sonner`) when copying email addresses or dispatching messages.
+- **🧭 Dynamic Navigation & Scrollspy:** Solid sticky navbar with active section detection, smooth scrolling, and an accessible mobile drawer.
 - **💼 Interactive Project Showcase:** Project category filtering (All, Featured, E-Commerce, Dashboards, Web Apps), detailed architecture highlights, and a Quick Details modal.
 - **🛠️ Tech Arsenal by Category:** Brand-icon-powered skills grid with experience levels and engineering principles.
 - **💌 Asynchronous Contact Hub:** Formspree-powered message dispatcher with confetti feedback, one-click email copying, and direct WhatsApp / LinkedIn links.
@@ -31,14 +35,15 @@ Deborah bridges an analytical background as a graduate of **Human Anatomy (Ladok
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack & React Libraries
 
 | Category | Technologies |
 |---|---|
 | **Core Framework** | React 19, JavaScript (ES6+), HTML5, CSS3 |
-| **Styling & Design** | Tailwind CSS v4, Glassmorphism, Responsive UI |
-| **Animations** | Framer Motion 12, Canvas Confetti |
-| **Icons & Visuals** | React Icons (Heroicons, FontAwesome, Simple Icons) |
+| **Styling & Theme** | Tailwind CSS v4, Solid Pure Black Design System |
+| **Animation & Motion** | Framer Motion 12, React Fast Marquee, React Type Animation, Canvas Confetti |
+| **Metrics & Feedback** | React CountUp, Sonner Toast Notifications |
+| **Icons & Visuals** | Lucide React, React Icons (Heroicons, FontAwesome, Simple Icons) |
 | **Routing & Navigation** | React Router 7, React Scroll |
 | **Build & Tooling** | Vite 8, ESLint, Node.js |
 | **Form Backend** | Formspree |
@@ -58,18 +63,18 @@ Debby-Portfolio/
 │   ├── components/
 │   │   ├── About.jsx        # Story, philosophy & 4 architectural pillars
 │   │   ├── Btn.jsx          # Accessible, multi-variant button component
-│   │   ├── Contact.jsx      # Async contact form & quick reach channels
+│   │   ├── Contact.jsx      # Async contact form & Sonner toast notifications
 │   │   ├── Footer.jsx       # Brand summary, links & back-to-top
-│   │   ├── Herosection.jsx  # Hero introduction, live pill & metrics
+│   │   ├── Herosection.jsx  # Typewriter intro, live pill & CountUp metrics
 │   │   ├── Home.jsx         # Section hierarchy & layout wrapper
-│   │   ├── Navbar.jsx       # Frosted glass header & mobile drawer
+│   │   ├── Navbar.jsx       # Solid black header & mobile drawer
 │   │   ├── Project.jsx      # Project grid, filters & modal breakdown
 │   │   ├── Skills.jsx       # Categorized skills matrix with brand icons
-│   │   └── ThemeProvider.jsx # Theme wrapper
+│   │   └── TechMarquee.jsx  # Infinite auto-scrolling tech stack banner
 │   ├── data/
 │   │   └── projects.json    # Project dataset with metadata & highlights
-│   ├── App.jsx              # Main routing & scroll handler
-│   ├── index.css            # Tailwind v4 styles, custom scrollbar & glows
+│   ├── App.jsx              # Main routing, Sonner Toaster & scroll handler
+│   ├── index.css            # Tailwind v4 styles, solid black tokens & custom scrollbar
 │   └── main.jsx             # React root mount
 ├── package.json
 └── vite.config.js

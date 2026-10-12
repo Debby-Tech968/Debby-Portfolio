@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
 import Btn from "./Btn";
 
@@ -11,13 +11,12 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
+      if (window.scrollY > 15) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
 
-      // Simple active section detection
       const sections = ["home", "about", "skills", "projects", "contact"];
       const scrollPos = window.scrollY + 200;
 
@@ -50,38 +49,38 @@ const Navbar = () => {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "glass-nav py-3.5 shadow-xl shadow-black/40"
-          : "bg-transparent py-5"
+          ? "solid-nav py-3 shadow-2xl shadow-black/80"
+          : "bg-black/60 backdrop-blur-sm py-4 border-b border-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* LOGO */}
+        {/* BRAND LOGO */}
         <ScrollLink
           to="home"
           smooth={true}
           duration={500}
-          className="cursor-pointer flex items-center gap-2 group"
+          className="cursor-pointer flex items-center gap-2.5 group select-none"
         >
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-mono font-bold text-white text-base shadow-md shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-mono font-bold text-white text-sm sm:text-base shadow-md shadow-cyan-500/20 group-hover:scale-105 transition-transform shrink-0">
             D
           </div>
           <div className="flex flex-col">
             <div className="flex items-center">
-              <span className="font-bold text-lg text-white tracking-tight group-hover:text-cyan-300 transition-colors">
+              <span className="font-bold text-base sm:text-lg text-white tracking-tight group-hover:text-cyan-400 transition-colors">
                 Deborah
               </span>
-              <span className="text-cyan-400 font-mono text-xs font-semibold ml-1">
+              <span className="text-cyan-400 font-mono text-xs font-semibold ml-0.5">
                 .dev
               </span>
             </div>
-            <span className="text-[10px] text-slate-400 font-mono tracking-wider -mt-1 hidden sm:block">
+            <span className="text-[10px] text-zinc-500 font-mono tracking-wider -mt-1 hidden xs:block">
               Frontend Engineer
             </span>
           </div>
         </ScrollLink>
 
-        {/* DESKTOP NAV LINKS */}
-        <nav className="hidden md:flex items-center gap-1 lg:gap-2 px-3 py-1.5 rounded-full bg-slate-900/60 border border-white/[0.08] backdrop-blur-md">
+        {/* DESKTOP NAV LINKS (CENTER) */}
+        <nav className="hidden md:flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#0d0d0d] border border-[#222222]">
           {navLinks.map((link) => {
             const isActive = activeSection === link.to;
             return (
@@ -91,67 +90,75 @@ const Navbar = () => {
                 smooth={true}
                 spy={true}
                 duration={500}
-                offset={-80}
-                className={`relative px-4 py-1.5 text-sm font-medium rounded-full cursor-pointer transition-all duration-200 ${
+                offset={-70}
+                className={`relative px-4 py-1.5 text-xs lg:text-sm font-medium rounded-full cursor-pointer transition-all duration-200 ${
                   isActive
-                    ? "text-cyan-300 bg-cyan-500/15 font-semibold"
-                    : "text-slate-300 hover:text-white hover:bg-white/5"
+                    ? "text-white bg-[#1e1e1e] font-semibold"
+                    : "text-zinc-400 hover:text-white hover:bg-white/5"
                 }`}
               >
                 {link.name}
                 {isActive && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3 h-0.5 bg-cyan-400 rounded-full" />
+                  <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-cyan-400 rounded-full" />
                 )}
               </ScrollLink>
             );
           })}
         </nav>
 
-        {/* ACTIONS */}
+        {/* DESKTOP ACTIONS */}
         <div className="hidden md:flex items-center gap-3">
           <a
             href="https://github.com/Debby-Tech968"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2.5 text-slate-400 hover:text-white hover:bg-slate-800/80 rounded-xl transition border border-transparent hover:border-white/10"
+            className="p-2 text-zinc-400 hover:text-white hover:bg-[#141414] rounded-xl transition border border-transparent hover:border-[#27272a]"
             title="GitHub Profile"
           >
-            <FaGithub className="text-lg" />
+            <FaGithub className="text-base" />
           </a>
           <a
             href="https://www.linkedin.com/in/ehiguese-deborah?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2.5 text-slate-400 hover:text-[#0a66c2] hover:bg-slate-800/80 rounded-xl transition border border-transparent hover:border-white/10"
+            className="p-2 text-zinc-400 hover:text-cyan-400 hover:bg-[#141414] rounded-xl transition border border-transparent hover:border-[#27272a]"
             title="LinkedIn Profile"
           >
-            <FaLinkedin className="text-lg" />
+            <FaLinkedin className="text-base" />
           </a>
 
-          <ScrollLink to="contact" smooth={true} duration={500} offset={-80}>
+          <ScrollLink to="contact" smooth={true} duration={500} offset={-70}>
             <Btn
-              text="Let's Talk"
+              text="Hire Me"
               size="sm"
               variant="primary"
-              className="font-medium"
+              className="font-medium text-xs"
             />
           </ScrollLink>
         </div>
 
-        {/* MOBILE MENU TOGGLE BUTTON */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none rounded-xl bg-slate-900/60 border border-white/10"
-          aria-label="Toggle menu"
-        >
-          {menuOpen ? <HiX className="text-2xl" /> : <HiMenuAlt3 className="text-2xl" />}
-        </button>
+        {/* MOBILE HAMBURGER BUTTON */}
+        <div className="flex items-center gap-2 md:hidden">
+          <ScrollLink to="contact" smooth={true} duration={500} offset={-70}>
+            <button className="px-3 py-1.5 rounded-lg bg-cyan-500 text-black text-xs font-bold font-mono">
+              Hire
+            </button>
+          </ScrollLink>
+
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="p-2 text-zinc-300 hover:text-white focus:outline-none rounded-xl bg-[#111111] border border-[#27272a] min-h-[38px] min-w-[38px] flex items-center justify-center cursor-pointer"
+            aria-label="Toggle navigation menu"
+          >
+            {menuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5 text-white" />}
+          </button>
+        </div>
       </div>
 
       {/* MOBILE DRAWER */}
       {menuOpen && (
-        <div className="md:hidden glass-nav border-b border-white/10 px-6 py-6 mt-2 space-y-4 animate-in slide-in-from-top duration-300">
-          <div className="flex flex-col gap-2">
+        <div className="md:hidden fixed top-[60px] left-0 right-0 w-full bg-black/95 border-b border-[#222222] backdrop-blur-2xl px-5 py-6 space-y-4 shadow-2xl animate-in slide-in-from-top-4 duration-200">
+          <div className="flex flex-col gap-1.5">
             {navLinks.map((link) => {
               const isActive = activeSection === link.to;
               return (
@@ -160,45 +167,53 @@ const Navbar = () => {
                   to={link.to}
                   smooth={true}
                   duration={500}
-                  offset={-70}
+                  offset={-65}
                   onClick={() => setMenuOpen(false)}
-                  className={`px-4 py-2.5 rounded-xl font-medium text-base cursor-pointer transition ${
+                  className={`px-4 py-3 rounded-xl font-medium text-sm cursor-pointer transition flex items-center justify-between ${
                     isActive
-                      ? "bg-cyan-500/20 text-cyan-300 font-semibold border border-cyan-500/30"
-                      : "text-slate-300 hover:bg-white/5 hover:text-white"
+                      ? "bg-[#18181b] text-white font-semibold border border-[#2e2e33]"
+                      : "text-zinc-400 hover:bg-[#121212] hover:text-white"
                   }`}
                 >
-                  {link.name}
+                  <span>{link.name}</span>
+                  {isActive ? (
+                    <span className="w-2 h-2 rounded-full bg-cyan-400" />
+                  ) : (
+                    <ArrowUpRight className="w-3.5 h-3.5 text-zinc-600" />
+                  )}
                 </ScrollLink>
               );
             })}
           </div>
 
-          <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-            <div className="flex items-center gap-3">
+          <div className="pt-4 border-t border-[#1f1f1f] flex items-center justify-between">
+            <div className="flex items-center gap-2">
               <a
                 href="https://github.com/Debby-Tech968"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 text-slate-300 hover:text-white bg-slate-800/80 rounded-xl border border-white/10"
+                className="p-2.5 text-zinc-300 hover:text-white bg-[#141414] rounded-xl border border-[#262626]"
+                title="GitHub"
               >
-                <FaGithub className="text-lg" />
+                <FaGithub className="text-base" />
               </a>
               <a
                 href="https://www.linkedin.com/in/ehiguese-deborah?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 text-slate-300 hover:text-[#0a66c2] bg-slate-800/80 rounded-xl border border-white/10"
+                className="p-2.5 text-zinc-300 hover:text-cyan-400 bg-[#141414] rounded-xl border border-[#262626]"
+                title="LinkedIn"
               >
-                <FaLinkedin className="text-lg" />
+                <FaLinkedin className="text-base" />
               </a>
               <a
                 href="https://wa.me/2347031539179"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 text-slate-300 hover:text-emerald-400 bg-slate-800/80 rounded-xl border border-white/10"
+                className="p-2.5 text-zinc-300 hover:text-emerald-400 bg-[#141414] rounded-xl border border-[#262626]"
+                title="WhatsApp"
               >
-                <FaWhatsapp className="text-lg" />
+                <FaWhatsapp className="w-4 h-4" />
               </a>
             </div>
 
@@ -206,10 +221,10 @@ const Navbar = () => {
               to="contact"
               smooth={true}
               duration={500}
-              offset={-70}
+              offset={-65}
               onClick={() => setMenuOpen(false)}
             >
-              <Btn text="Hire Me" size="sm" variant="primary" />
+              <Btn text="Get In Touch" size="sm" variant="primary" />
             </ScrollLink>
           </div>
         </div>

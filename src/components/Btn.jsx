@@ -18,28 +18,25 @@ const Btn = ({
   const content = children || text;
 
   const baseStyles =
-    "inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#080C14] disabled:opacity-50 disabled:cursor-not-allowed group active:scale-[0.98]";
+    "inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-50 disabled:cursor-not-allowed group active:scale-[0.98] select-none text-center";
 
   const sizeStyles = {
-    sm: "px-3.5 py-2 text-xs gap-1.5",
-    md: "px-5 py-2.5 text-sm gap-2",
-    lg: "px-7 py-3.5 text-base gap-2.5",
+    sm: "px-3.5 py-2 text-xs gap-1.5 min-h-[38px]",
+    md: "px-5 py-2.5 text-sm gap-2 min-h-[44px]",
+    lg: "px-6 py-3.5 text-sm sm:text-base gap-2.5 min-h-[48px]",
   };
 
   const variantStyles = {
     primary:
-      "bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 focus:ring-cyan-500 border border-cyan-400/30",
+      "bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-semibold shadow-lg shadow-cyan-950/50 hover:shadow-cyan-500/20 border border-cyan-400/20",
     secondary:
-      "bg-slate-800/80 hover:bg-slate-700/80 text-slate-200 hover:text-white border border-slate-700 hover:border-slate-600 focus:ring-slate-500 backdrop-blur-sm",
+      "bg-[#141414] hover:bg-[#1f1f1f] text-zinc-200 hover:text-white border border-[#27272a] hover:border-[#3f3f46]",
     outline:
-      "bg-transparent hover:bg-cyan-500/10 text-cyan-400 hover:text-cyan-300 border border-cyan-500/40 hover:border-cyan-400 focus:ring-cyan-500",
-    ghost:
-      "bg-transparent hover:bg-white/5 text-slate-300 hover:text-white focus:ring-slate-500",
+      "bg-transparent hover:bg-white/5 text-zinc-300 hover:text-white border border-zinc-800 hover:border-zinc-600",
     glow:
-      "bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 text-white shadow-lg shadow-blue-500/30 hover:shadow-cyan-500/50 hover:brightness-110 border border-white/20",
+      "bg-white text-black hover:bg-zinc-200 font-semibold shadow-lg shadow-white/10 hover:shadow-white/20 border border-white",
   };
 
-  // If custom className has bg- or overrides, let className take precedence while keeping base styles
   const chosenVariant = variantStyles[variant] || variantStyles.primary;
   const chosenSize = sizeStyles[size] || sizeStyles.md;
   const combinedClasses = `${baseStyles} ${chosenSize} ${chosenVariant} ${className}`;
@@ -47,7 +44,7 @@ const Btn = ({
   const renderIcon = () => {
     if (!Icon) return null;
     return typeof Icon === "function" || typeof Icon === "object" ? (
-      <Icon className="text-lg transition-transform duration-300 group-hover:translate-x-0.5" />
+      <Icon className="w-4 h-4 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5" />
     ) : (
       Icon
     );

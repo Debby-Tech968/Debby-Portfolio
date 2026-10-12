@@ -1,241 +1,224 @@
-import Btn from "./Btn";
-import image from "../assets/Debby1.jpg";
 import { motion } from "framer-motion";
 import { Link as ScrollLink } from "react-scroll";
+import { TypeAnimation } from "react-type-animation";
+import CountUp from "react-countup";
+import {
+  ArrowDown,
+  Mail,
+  Terminal,
+} from "lucide-react";
 import { FaGithub, FaLinkedin, FaWhatsapp, FaReact } from "react-icons/fa6";
 import { SiTailwindcss } from "react-icons/si";
-import { HiArrowDown, HiSparkles, HiOutlineEnvelope } from "react-icons/hi2";
-
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 25 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 110,
-      damping: 14,
-    },
-  },
-};
+import Btn from "./Btn";
+import image from "../assets/Debby1.jpg";
 
 const Herosection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-12 overflow-hidden">
-      {/* Background ambient decorative glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 sm:w-[500px] h-96 sm:h-[500px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/3 right-10 w-72 h-72 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none" />
+    <section className="relative min-h-[92vh] flex items-center justify-center pt-24 pb-14 px-4 sm:px-6 lg:px-12 bg-black overflow-hidden w-full">
+      {/* Subtle solid radial highlight */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-cyan-950/20 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
-        {/* TEXT CONTENT (7 cols on lg) */}
-        <motion.div
-          className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start"
-          variants={container}
-          initial="hidden"
-          animate="show"
-        >
-          {/* AVAILABILITY PILL */}
-          <motion.div variants={item} className="mb-5 inline-block">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm font-medium">
-              <span className="relative flex h-2.5 w-2.5">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
+        {/* TEXT CONTENT (7 cols) */}
+        <div className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start order-2 lg:order-1">
+          {/* AVAILABILITY STATUS PILL */}
+          <div className="mb-4 inline-block">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111111] border border-[#27272a] text-zinc-300 text-xs font-mono">
+              <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              Available for Frontend Roles &amp; Freelance
+              <span>Available for Frontend Roles &amp; Freelance</span>
             </div>
-          </motion.div>
+          </div>
 
-          {/* NAME & GREETING */}
-          <motion.div variants={item} className="space-y-2 mb-4">
-            <p className="text-cyan-400 font-mono text-sm sm:text-base font-semibold tracking-wider">
-              HELLO WORLD, I'M
+          {/* NAME & TITLE */}
+          <div className="space-y-2 mb-4 w-full">
+            <p className="text-cyan-400 font-mono text-xs sm:text-sm font-semibold tracking-wider uppercase">
+              Hello World, I'm
             </p>
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.1] break-words">
               Ehiguese Deborah{" "}
               <span className="block text-gradient-cyan mt-1">
                 Osekhimen
               </span>
             </h1>
-          </motion.div>
+          </div>
 
-          {/* SUBTITLE */}
-          <motion.h2
-            variants={item}
-            className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-300 mb-6 flex items-center justify-center lg:justify-start gap-2"
-          >
-            <span>Frontend Developer &amp; React Specialist</span>
-            <HiSparkles className="text-cyan-400 text-lg hidden sm:inline" />
-          </motion.h2>
+          {/* DYNAMIC TYPEWRITER TITLE */}
+          <div className="text-base sm:text-xl md:text-2xl font-semibold text-zinc-300 mb-5 min-h-[36px] flex items-center justify-center lg:justify-start gap-2">
+            <Terminal className="w-5 h-5 text-cyan-400 shrink-0 hidden sm:inline" />
+            <TypeAnimation
+              sequence={[
+                "Frontend Developer",
+                2000,
+                "React.js Specialist",
+                2000,
+                "UI/UX Design Craftsman",
+                2000,
+                "Anatomy Graduate & Developer",
+                2000,
+              ]}
+              wrapper="span"
+              speed={45}
+              repeat={Infinity}
+              className="text-cyan-400 font-mono"
+            />
+          </div>
 
-          {/* PITCH / BIO */}
-          <motion.p
-            variants={item}
-            className="max-w-2xl text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed mb-8"
-          >
-            I architect responsive, pixel-perfect, and user-centric web applications
-            using <span className="text-white font-medium">React</span>,{" "}
+          {/* VALUE PROPOSITION BIO */}
+          <p className="max-w-xl text-zinc-400 text-sm sm:text-base leading-relaxed mb-8">
+            Building responsive, pixel-perfect web applications using{" "}
+            <span className="text-white font-medium">React</span>,{" "}
             <span className="text-white font-medium">Tailwind CSS</span>, and{" "}
             <span className="text-white font-medium">modern JavaScript</span>.
-            Bridging an analytical mindset from Human Anatomy with creative engineering
-            craft to build clean, intuitive digital products.
-          </motion.p>
+            Combining scientific rigor from Human Anatomy with engineering craft to deliver fast,
+            intuitive digital products.
+          </p>
 
-          {/* CTAs */}
-          <motion.div
-            variants={item}
-            className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-10 w-full sm:w-auto"
-          >
-            <ScrollLink to="projects" smooth={true} duration={600} offset={-70}>
+          {/* CALL TO ACTION BUTTONS */}
+          <div className="flex flex-col xs:flex-row items-center justify-center lg:justify-start gap-3 mb-10 w-full sm:w-auto">
+            <ScrollLink
+              to="projects"
+              smooth={true}
+              duration={600}
+              offset={-70}
+              className="w-full xs:w-auto"
+            >
               <Btn
                 text="Explore My Work"
-                icon={HiArrowDown}
+                icon={ArrowDown}
                 variant="primary"
                 size="lg"
-                className="w-full sm:w-auto shadow-cyan-500/25"
+                className="w-full xs:w-auto"
               />
             </ScrollLink>
 
-            <ScrollLink to="contact" smooth={true} duration={600} offset={-70}>
+            <ScrollLink
+              to="contact"
+              smooth={true}
+              duration={600}
+              offset={-70}
+              className="w-full xs:w-auto"
+            >
               <Btn
                 text="Get In Touch"
                 variant="secondary"
                 size="lg"
-                className="w-full sm:w-auto"
+                className="w-full xs:w-auto"
               />
             </ScrollLink>
-          </motion.div>
+          </div>
 
-          {/* SOCIAL & QUICK STATS BAR */}
-          <motion.div
-            variants={item}
-            className="pt-6 border-t border-slate-800/80 w-full flex flex-col sm:flex-row items-center justify-between gap-6"
-          >
-            {/* SOCIAL ICONS */}
-            <div className="flex items-center gap-3">
-              <span className="text-xs font-mono text-slate-400 mr-1 uppercase tracking-wider">
-                Connect:
-              </span>
+          {/* SOCIAL & STATS STRIP */}
+          <div className="pt-6 border-t border-[#1f1f1f] w-full flex flex-col sm:flex-row items-center justify-between gap-6">
+            {/* SOCIAL CHANNELS */}
+            <div className="flex items-center gap-2.5">
               <a
                 href="https://github.com/Debby-Tech968"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-800 transition"
+                className="w-10 h-10 rounded-xl bg-[#111111] border border-[#262626] hover:border-cyan-500/50 flex items-center justify-center text-zinc-300 hover:text-white transition"
                 title="GitHub"
               >
-                <FaGithub className="text-lg" />
+                <FaGithub className="text-base" />
               </a>
               <a
                 href="https://www.linkedin.com/in/ehiguese-deborah?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 flex items-center justify-center text-slate-300 hover:text-[#0a66c2] hover:bg-slate-800 transition"
+                className="w-10 h-10 rounded-xl bg-[#111111] border border-[#262626] hover:border-cyan-500/50 flex items-center justify-center text-zinc-300 hover:text-cyan-400 transition"
                 title="LinkedIn"
               >
-                <FaLinkedin className="text-lg" />
+                <FaLinkedin className="text-base" />
               </a>
               <a
                 href="https://wa.me/2347031539179"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:bg-slate-800 transition"
+                className="w-10 h-10 rounded-xl bg-[#111111] border border-[#262626] hover:border-emerald-500/50 flex items-center justify-center text-zinc-300 hover:text-emerald-400 transition"
                 title="WhatsApp"
               >
-                <FaWhatsapp className="text-lg" />
+                <FaWhatsapp className="text-base" />
               </a>
               <a
                 href="mailto:osekhimen2020@gmail.com"
-                className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:bg-slate-800 transition"
+                className="w-10 h-10 rounded-xl bg-[#111111] border border-[#262626] hover:border-cyan-500/50 flex items-center justify-center text-zinc-300 hover:text-cyan-400 transition"
                 title="Email Deborah"
               >
-                <HiOutlineEnvelope className="text-lg" />
+                <Mail className="w-4 h-4" />
               </a>
             </div>
 
-            {/* METRICS */}
-            <div className="flex items-center gap-6 text-center sm:text-left">
-              <div>
+            {/* ANIMATED STATS WITH REACT-COUNTUP */}
+            <div className="flex items-center gap-5 sm:gap-6">
+              <div className="text-center sm:text-left">
                 <p className="text-xl sm:text-2xl font-bold font-mono text-cyan-400">
-                  4+
+                  <CountUp end={4} duration={2.5} />+
                 </p>
-                <p className="text-xs text-slate-400">Shipped Projects</p>
+                <p className="text-[11px] text-zinc-500 font-mono">Shipped Projects</p>
               </div>
-              <div className="w-px h-8 bg-slate-800" />
-              <div>
-                <p className="text-xl sm:text-2xl font-bold font-mono text-indigo-400">
-                  100%
+              <div className="w-px h-7 bg-[#27272a]" />
+              <div className="text-center sm:text-left">
+                <p className="text-xl sm:text-2xl font-bold font-mono text-zinc-200">
+                  <CountUp end={100} duration={2.5} />%
                 </p>
-                <p className="text-xs text-slate-400">Responsive UI</p>
+                <p className="text-[11px] text-zinc-500 font-mono">Mobile Responsive</p>
               </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
-        {/* IMAGE / VISUAL CARD (5 cols on lg) */}
-        <motion.div
-          className="lg:col-span-5 flex justify-center items-center relative"
-          initial={{ opacity: 0, scale: 0.9, y: 30 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.8, type: "spring", damping: 15 }}
-        >
-          {/* Ambient Glow */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 via-indigo-500/20 to-purple-500/20 rounded-3xl blur-2xl transform scale-95" />
-
-          {/* Main Card Container */}
-          <div className="relative glass-card p-3 sm:p-4 rounded-3xl border border-white/10 shadow-2xl max-w-sm sm:max-w-md w-full">
-            {/* Top Bar Decoration */}
-            <div className="flex items-center justify-between pb-3 px-2 border-b border-white/[0.08] mb-3">
+        {/* IMAGE / VISUAL CARD (5 cols) */}
+        <div className="lg:col-span-5 flex justify-center items-center order-1 lg:order-2 w-full">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            className="relative solid-surface p-3 sm:p-4 rounded-3xl border border-[#222222] shadow-2xl max-w-[280px] xs:max-w-[320px] sm:max-w-sm w-full"
+          >
+            {/* Card Window Bar */}
+            <div className="flex items-center justify-between pb-2.5 px-2 border-b border-[#1f1f1f] mb-3">
               <div className="flex items-center gap-1.5">
-                <span className="w-3 h-3 rounded-full bg-rose-500/80" />
-                <span className="w-3 h-3 rounded-full bg-amber-500/80" />
-                <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
+                <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/70" />
               </div>
-              <span className="font-mono text-[11px] text-slate-400">
+              <span className="font-mono text-[10px] sm:text-[11px] text-zinc-500">
                 deborah.profile.tsx
               </span>
             </div>
 
-            {/* Image */}
-            <div className="relative overflow-hidden rounded-2xl aspect-[4/5] bg-slate-900 group">
+            {/* Profile Photo */}
+            <div className="relative overflow-hidden rounded-2xl aspect-[4/5] bg-[#111111]">
               <img
                 src={image}
                 alt="Ehiguese Deborah Osekhimen"
-                className="w-full h-full object-cover object-top filter brightness-[0.98] contrast-[1.02] group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover object-top filter brightness-[0.96]"
+                loading="eager"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#080C14] via-transparent to-transparent opacity-60" />
-              
-              {/* Bottom tag inside photo */}
-              <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl glass-card backdrop-blur-md border border-white/10">
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70" />
+
+              {/* In-Photo Badge */}
+              <div className="absolute bottom-2.5 left-2.5 right-2.5 p-2.5 rounded-xl bg-black/85 border border-[#27272a] backdrop-blur-md">
                 <p className="text-xs font-semibold text-white">Ehiguese Deborah</p>
-                <p className="text-[11px] text-cyan-300 font-mono">Frontend Engineer • Lagos, NG</p>
+                <p className="text-[11px] text-cyan-400 font-mono">Frontend Engineer • Lagos, NG</p>
               </div>
             </div>
 
-            {/* Floating Tech Badges */}
-            <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-cyan-500/40 text-cyan-300 text-xs font-mono font-semibold shadow-lg flex items-center gap-1.5 animate-float backdrop-blur-md">
-              <FaReact className="text-cyan-400 text-base" />
-              React.js
+            {/* Safe Corner Tech Badges */}
+            <div className="mt-3 flex items-center justify-between gap-2">
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#141414] border border-[#27272a] text-cyan-300 text-xs font-mono">
+                <FaReact className="text-cyan-400" />
+                <span>React.js</span>
+              </div>
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#141414] border border-[#27272a] text-sky-300 text-xs font-mono">
+                <SiTailwindcss className="text-cyan-400" />
+                <span>Tailwind CSS</span>
+              </div>
             </div>
-
-            <div
-              className="absolute -bottom-3 -left-3 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-blue-500/40 text-blue-300 text-xs font-mono font-semibold shadow-lg flex items-center gap-1.5 animate-float backdrop-blur-md"
-              style={{ animationDelay: "2.5s" }}
-            >
-              <SiTailwindcss className="text-cyan-400 text-base" />
-              Tailwind CSS
-            </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

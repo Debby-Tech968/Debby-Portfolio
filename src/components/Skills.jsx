@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
+  Code,
+  Smartphone,
+  CheckCircle2,
+  Terminal,
+} from "lucide-react";
+import {
   FaReact,
   FaGitAlt,
   FaGithub,
   FaMobileScreen,
-  FaCode,
   FaCss3Alt,
 } from "react-icons/fa6";
 import {
@@ -17,10 +22,6 @@ import {
   SiFramer,
   SiReactrouter,
 } from "react-icons/si";
-import {
-  HiOutlineCheckBadge,
-  HiOutlineCommandLine,
-} from "react-icons/hi2";
 
 const skillsCategories = [
   { id: "all", label: "All Skills" },
@@ -37,7 +38,7 @@ const skillsData = [
     icon: FaReact,
     level: "Advanced",
     color: "#61DAFB",
-    desc: "Hooks, Custom Components, State Architecture & Lifecycle",
+    desc: "Custom hooks, component modularity & state architecture",
   },
   {
     name: "JavaScript (ES6+)",
@@ -45,7 +46,7 @@ const skillsData = [
     icon: SiJavascript,
     level: "Advanced",
     color: "#F7DF1E",
-    desc: "Async/Await, DOM manipulation, Array methods & closures",
+    desc: "Async/await, DOM APIs, modern ES features & closures",
   },
   {
     name: "HTML5 Semantic",
@@ -53,15 +54,15 @@ const skillsData = [
     icon: SiHtml5,
     level: "Expert",
     color: "#E34F26",
-    desc: "Semantic elements, SEO-friendly markup, Web Accessibility",
+    desc: "Semantic elements, accessible hierarchy & SEO structure",
   },
   {
-    name: "CSS3 & Modern Layouts",
+    name: "CSS3 & Layouts",
     category: "frontend",
     icon: FaCss3Alt,
     level: "Expert",
     color: "#1572B6",
-    desc: "Flexbox, CSS Grid, animations, variables & responsive rules",
+    desc: "Flexbox, CSS Grid, media queries & responsive behavior",
   },
   {
     name: "React Router",
@@ -69,7 +70,7 @@ const skillsData = [
     icon: SiReactrouter,
     level: "Proficient",
     color: "#CA4245",
-    desc: "Multi-page SPA navigation, nested routes & route params",
+    desc: "Client-side routing, route parameters & navigation flows",
   },
   // Styling
   {
@@ -78,15 +79,15 @@ const skillsData = [
     icon: SiTailwindcss,
     level: "Advanced",
     color: "#06B6D4",
-    desc: "Utility-first design systems, custom themes & v4 features",
+    desc: "Utility-first design systems, custom themes & responsive rules",
   },
   {
-    name: "Responsive Web Design",
+    name: "Responsive Design",
     category: "styling",
     icon: FaMobileScreen,
     level: "Expert",
     color: "#38BDF8",
-    desc: "Mobile-first layouts adapting flawlessly from phone to 4K",
+    desc: "Mobile-first layouts adapting cleanly across phones, tablets & desktops",
   },
   {
     name: "Framer Motion",
@@ -94,7 +95,7 @@ const skillsData = [
     icon: SiFramer,
     level: "Proficient",
     color: "#FF0055",
-    desc: "Smooth page transitions, scroll animations & micro-interactions",
+    desc: "Micro-interactions, spring physics & scroll animations",
   },
   // Tools
   {
@@ -103,7 +104,7 @@ const skillsData = [
     icon: FaGitAlt,
     level: "Advanced",
     color: "#F05032",
-    desc: "Branching strategies, conflict resolution & commits hygiene",
+    desc: "Branch workflows, atomic commits & version history",
   },
   {
     name: "GitHub",
@@ -111,7 +112,7 @@ const skillsData = [
     icon: FaGithub,
     level: "Advanced",
     color: "#FFFFFF",
-    desc: "Repo management, issues, pull requests & open source",
+    desc: "Repository management, pull requests & open source",
   },
   {
     name: "Figma to Code",
@@ -119,32 +120,17 @@ const skillsData = [
     icon: SiFigma,
     level: "Proficient",
     color: "#F24E1E",
-    desc: "Translating wireframes & UI specs into 1:1 pixel-perfect code",
+    desc: "Translating wireframes & UI specs into 1:1 pixel-accurate code",
   },
   {
-    name: "Vite & Tooling",
+    name: "Vite Bundler",
     category: "tools",
     icon: SiVite,
     level: "Proficient",
     color: "#646CFF",
-    desc: "Fast HMR, modern bundling & optimized production builds",
+    desc: "Hot module reloading, bundle optimization & fast builds",
   },
 ];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.08,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, scale: 0.9, y: 15 },
-  show: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.3 } },
-};
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -155,37 +141,34 @@ const Skills = () => {
       : skillsData.filter((s) => s.category === activeCategory);
 
   return (
-    <section id="skills" className="py-24 px-4 sm:px-6 lg:px-12 relative">
-      {/* Background glow */}
-      <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
-
+    <section id="skills" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-12 bg-black relative w-full">
       <div className="max-w-7xl mx-auto">
         {/* HEADER */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-wider mb-4">
-            <HiOutlineCommandLine className="text-sm" />
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111111] border border-[#27272a] text-cyan-400 text-xs font-mono uppercase tracking-wider mb-3">
+            <Terminal className="w-3.5 h-3.5" />
             Technical Arsenal
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
             Skills &amp;{" "}
             <span className="text-gradient-cyan">Technologies</span>
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg mt-4 leading-relaxed">
+          <p className="text-zinc-400 text-sm sm:text-base md:text-lg mt-3 leading-relaxed">
             The core tools and modern engineering practices I use to translate
-            complex ideas into high-performing, elegant web applications.
+            ideas into clean, performant, and resilient applications.
           </p>
         </div>
 
-        {/* CATEGORY TABS */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+        {/* CATEGORY TABS (RESPONSIVE NO-SCROLLBAR ON MOBILE) */}
+        <div className="flex items-center justify-start sm:justify-center gap-2 mb-10 overflow-x-auto no-scrollbar pb-2 px-1">
           {skillsCategories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer ${
+              className={`px-4 sm:px-5 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-200 whitespace-nowrap cursor-pointer shrink-0 ${
                 activeCategory === cat.id
-                  ? "bg-cyan-500 text-white font-semibold shadow-lg shadow-cyan-500/25"
-                  : "bg-slate-900/80 text-slate-400 hover:text-white hover:bg-slate-800 border border-white/5"
+                  ? "bg-white text-black font-semibold shadow-lg shadow-white/10"
+                  : "bg-[#111111] text-zinc-400 hover:text-white hover:bg-[#181818] border border-[#222222]"
               }`}
             >
               {cat.label}
@@ -194,90 +177,83 @@ const Skills = () => {
         </div>
 
         {/* SKILLS GRID */}
-        <motion.div
-          key={activeCategory}
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mb-16"
-        >
+        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-5 mb-14">
           {filteredSkills.map((skill) => {
             const Icon = skill.icon;
             return (
               <motion.div
                 key={skill.name}
-                variants={itemVariants}
-                whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="glass-card p-5 rounded-2xl border border-white/10 hover:border-cyan-500/30 transition-all duration-300 group flex flex-col justify-between"
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="solid-surface solid-surface-hover p-4 sm:p-5 rounded-2xl border border-[#222222] flex flex-col justify-between group"
               >
                 <div>
-                  <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-start justify-between mb-3.5">
                     <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl transition-transform group-hover:scale-110 duration-300"
+                      className="w-10 h-10 rounded-xl flex items-center justify-center text-xl transition-transform group-hover:scale-110 duration-200"
                       style={{
-                        backgroundColor: `${skill.color}15`,
+                        backgroundColor: "#161616",
                         color: skill.color,
-                        border: `1px solid ${skill.color}30`,
+                        border: "1px solid #27272a",
                       }}
                     >
-                      <Icon />
+                      <Icon className="w-5 h-5" />
                     </div>
 
-                    <span className="px-2.5 py-1 rounded-full text-[11px] font-mono font-medium bg-slate-800/80 text-slate-300 border border-white/5">
+                    <span className="px-2 py-0.5 rounded-md text-[10px] font-mono font-medium bg-[#161616] text-zinc-400 border border-[#262626]">
                       {skill.level}
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors mb-1.5">
+                  <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-400 transition-colors mb-1">
                     {skill.name}
                   </h3>
 
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <p className="text-xs text-zinc-400 leading-relaxed">
                     {skill.desc}
                   </p>
                 </div>
               </motion.div>
             );
           })}
-        </motion.div>
+        </div>
 
-        {/* TECHNICAL PRINCIPLES CALLOUT */}
-        <div className="glass-card p-6 sm:p-8 rounded-3xl border border-white/10 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0 border border-cyan-500/30">
-                <FaCode className="text-lg" />
+        {/* ENGINEERING PRINCIPLES CALLOUT */}
+        <div className="solid-surface p-5 sm:p-8 rounded-3xl border border-[#222222]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="flex items-start gap-3.5">
+              <div className="w-9 h-9 rounded-xl bg-[#141414] text-cyan-400 flex items-center justify-center shrink-0 border border-[#27272a]">
+                <Code className="w-4 h-4" />
               </div>
               <div>
                 <h4 className="text-sm font-bold text-white mb-1">Clean &amp; Reusable</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  Writing DRY, modular components that are easy to maintain and scale over time.
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  Writing DRY, modular components that are effortless to maintain and scale.
                 </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0 border border-indigo-500/30">
-                <FaMobileScreen className="text-lg" />
+            <div className="flex items-start gap-3.5">
+              <div className="w-9 h-9 rounded-xl bg-[#141414] text-cyan-400 flex items-center justify-center shrink-0 border border-[#27272a]">
+                <Smartphone className="w-4 h-4" />
               </div>
               <div>
                 <h4 className="text-sm font-bold text-white mb-1">Fluid Responsiveness</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  Rigorous testing across screen resolutions to ensure pixel-perfect fidelity.
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  Rigorously tested across handheld screens, tablets, and wide monitors.
                 </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/30">
-                <HiOutlineCheckBadge className="text-lg" />
+            <div className="flex items-start gap-3.5">
+              <div className="w-9 h-9 rounded-xl bg-[#141414] text-emerald-400 flex items-center justify-center shrink-0 border border-[#27272a]">
+                <CheckCircle2 className="w-4 h-4" />
               </div>
               <div>
                 <h4 className="text-sm font-bold text-white mb-1">Accessible &amp; Fast</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  Optimizing for user experience, low latency, and semantic accessibility standards.
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  Optimized for speed, accessible semantic tags, and smooth rendering.
                 </p>
               </div>
             </div>
