@@ -79,7 +79,7 @@ const About = () => {
                   src={debbyAlt}
                   alt="Deborah Osekhimen Portrait"
                   className="w-full h-full object-cover object-center filter brightness-[0.96]"
-                  loading="lazy"
+                  loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
 

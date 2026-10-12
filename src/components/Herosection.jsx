@@ -1,7 +1,6 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link as ScrollLink } from "react-scroll";
-import { TypeAnimation } from "react-type-animation";
-import CountUp from "react-countup";
 import {
   ArrowDown,
   Mail,
@@ -12,7 +11,82 @@ import { SiTailwindcss } from "react-icons/si";
 import Btn from "./Btn";
 import image from "../assets/Debby1.jpg";
 
+// Native typewriter component (zero CJS/ESM issues, smooth 60fps)
+const Typewriter = ({ words, delay = 2200, typingSpeed = 65, deletingSpeed = 40 }) => {
+  const [wordIndex, setWordIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentWord = words[wordIndex % words.length];
+
+    let timer;
+    if (isDeleting) {
+      if (currentText.length > 0) {
+        timer = setTimeout(() => {
+          setCurrentText(currentWord.substring(0, currentText.length - 1));
+        }, deletingSpeed);
+      } else {
+        setIsDeleting(false);
+        setWordIndex((prev) => (prev + 1) % words.length);
+      }
+    } else {
+      if (currentText.length < currentWord.length) {
+        timer = setTimeout(() => {
+          setCurrentText(currentWord.substring(0, currentText.length + 1));
+        }, typingSpeed);
+      } else {
+        timer = setTimeout(() => {
+          setIsDeleting(true);
+        }, delay);
+      }
+    }
+
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, wordIndex, words, delay, typingSpeed, deletingSpeed]);
+
+  return (
+    <span className="text-cyan-400 font-mono inline-flex items-center">
+      <span>{currentText}</span>
+      <span className="w-0.5 h-4 sm:h-5 bg-cyan-400 ml-1 inline-block animate-pulse" />
+    </span>
+  );
+};
+
+// Native animated number counter
+const AnimatedCounter = ({ end, duration = 1200 }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let startTimestamp = null;
+    let frameId;
+
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.round(easedProgress * end));
+
+      if (progress < 1) {
+        frameId = requestAnimationFrame(step);
+      }
+    };
+
+    frameId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frameId);
+  }, [end, duration]);
+
+  return <>{count}</>;
+};
+
 const Herosection = () => {
+  const titles = [
+    "Frontend Developer",
+    "React.js Specialist",
+    "UI/UX Design Craftsman",
+    "Anatomy Graduate & Developer",
+  ];
+
   return (
     <section className="relative min-h-[92vh] flex items-center justify-center pt-24 pb-14 px-4 sm:px-6 lg:px-12 bg-black overflow-hidden w-full">
       {/* Subtle solid radial highlight */}
@@ -48,22 +122,7 @@ const Herosection = () => {
           {/* DYNAMIC TYPEWRITER TITLE */}
           <div className="text-base sm:text-xl md:text-2xl font-semibold text-zinc-300 mb-5 min-h-[36px] flex items-center justify-center lg:justify-start gap-2">
             <Terminal className="w-5 h-5 text-cyan-400 shrink-0 hidden sm:inline" />
-            <TypeAnimation
-              sequence={[
-                "Frontend Developer",
-                2000,
-                "React.js Specialist",
-                2000,
-                "UI/UX Design Craftsman",
-                2000,
-                "Anatomy Graduate & Developer",
-                2000,
-              ]}
-              wrapper="span"
-              speed={45}
-              repeat={Infinity}
-              className="text-cyan-400 font-mono"
-            />
+            <Typewriter words={titles} />
           </div>
 
           {/* VALUE PROPOSITION BIO */}
@@ -150,18 +209,18 @@ const Herosection = () => {
               </a>
             </div>
 
-            {/* ANIMATED STATS WITH REACT-COUNTUP */}
+            {/* ANIMATED STATS */}
             <div className="flex items-center gap-5 sm:gap-6">
               <div className="text-center sm:text-left">
                 <p className="text-xl sm:text-2xl font-bold font-mono text-cyan-400">
-                  <CountUp end={4} duration={2.5} />+
+                  <AnimatedCounter end={4} />+
                 </p>
                 <p className="text-[11px] text-zinc-500 font-mono">Shipped Projects</p>
               </div>
               <div className="w-px h-7 bg-[#27272a]" />
               <div className="text-center sm:text-left">
                 <p className="text-xl sm:text-2xl font-bold font-mono text-zinc-200">
-                  <CountUp end={100} duration={2.5} />%
+                  <AnimatedCounter end={100} />%
                 </p>
                 <p className="text-[11px] text-zinc-500 font-mono">Mobile Responsive</p>
               </div>
