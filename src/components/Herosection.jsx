@@ -246,7 +246,7 @@ const Herosection = () => {
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/70" />
               </div>
               <span className="font-mono text-[10px] sm:text-[11px] text-zinc-500">
-                deborah.profile.tsx
+                deborah.profile
               </span>
             </div>
 

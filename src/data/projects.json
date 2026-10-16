@@ -3,7 +3,7 @@
     "id": "the-elect-solution",
     "title": "The Elect Solution",
     "category": "E-Commerce",
-    "featured": true,
+    "featured": false,
     "description": "A comprehensive e-commerce platform featuring a structured product catalog, reusable component architecture, and a real-time interactive map interface that streamlines location-based customer interaction and seamless ordering flow.",
     "highlights": [
       "Interactive map integration for customer delivery & locations",
@@ -19,7 +19,7 @@
     "id": "akademi-dashboard",
     "title": "Akademi School Dashboard",
     "category": "Dashboard & Analytics",
-    "featured": true,
+    "featured": false,
     "description": "An enterprise-grade school management and analytics dashboard with dedicated submodules for students, teachers, finance tracking, and activities. Built with reusable modular components, React Router navigation, and dynamic chart visualizations.",
     "highlights": [
       "Interactive Recharts analytics for financial & student trends",
@@ -48,19 +48,19 @@
     "github": "https://github.com/Debby-Tech968/Job-listing-app"
   },
   {
-    "id": "ecommerce-store",
-    "title": "Interactive E-Commerce Store",
+    "id": "aralagos-ecommerce",
+    "title": "Aralagos E-Commerce Store",
     "category": "E-Commerce",
     "featured": false,
-    "description": "A responsive shopping application featuring real-time interactive cart state management, product catalog filters, authentication UI flow, and smooth transition feedback for customers.",
+    "description": "A fully responsive e-commerce storefront with real-time cart state management, a filterable product catalog, and a complete authentication flow. Built for a smooth, feedback-rich shopping experience across all devices.",
     "highlights": [
-      "Full interactive cart system with item quantity & total calculation",
-      "Authentication and onboarding UI flows",
-      "Tailwind-powered fluid responsive grid layout"
+      "Dynamic cart with live quantity updates and automatic totals",
+      "Complete authentication and onboarding UI flows",
+      "Fluid, mobile-first responsive grid powered by Tailwind CSS"
     ],
-    "technologies": ["JavaScript", "HTML5", "CSS3", "Tailwind CSS"],
-    "image": "/assets/Project3.png",
-    "live": "https://e-commerce-app.vercel.app/",
-    "github": "https://github.com/Debby-Tech968/E-commerce-website"
+    "technologies": ["JavaScript", "HTML5", "CSS3", "Tailwind CSS", "React"],
+    "image": "/assets/Project5.png",
+    "live": "https://aralagos-ecommerce.vercel.app/",
+    "github": "https://github.com/Debby-Tech968/AraLagos"
   }
 ]
