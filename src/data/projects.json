@@ -76,7 +76,7 @@
     ],
     "technologies": ["React", "Vite", "CSS3", "JavaScript", "Responsive Design"],
     "image": "/assets/Project6.png",
-    "live": "https://debby-tech968.github.io/deborah-university-dashboard/",
+    "live": "https://deborah-university-dashboard.vercel.app/",
     "github": "https://github.com/Debby-Tech968/deborah-university-dashboard"
   }
 ]

@@ -12,7 +12,6 @@ import { FaGithub } from "react-icons/fa6";
 
 const categories = [
   "All",
-  "Featured",
   "E-Commerce",
   "Dashboard & Analytics",
   "Web Applications",
