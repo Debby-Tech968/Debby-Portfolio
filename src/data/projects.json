@@ -62,5 +62,21 @@
     "image": "/assets/Project5.png",
     "live": "https://aralagos-ecommerce.vercel.app/",
     "github": "https://github.com/Debby-Tech968/AraLagos"
+  },
+  {
+    "id": "deborah-university-dashboard",
+    "title": "Deborah University Dashboard",
+    "category": "Dashboard & Analytics",
+    "featured": false,
+    "description": "A responsive university operations dashboard with separate administrator and student portals. It brings student records, course management, approvals, notifications, tuition payments in naira, downloadable receipts, and CSV reporting into one cohesive workspace.",
+    "highlights": [
+      "Role-based administrator and student portals with protected hash routing",
+      "Tuition payments, instalment plans, receipts, statements, and CSV exports in naira",
+      "Mobile card tables, tablet layouts, and a three-column desktop course grid"
+    ],
+    "technologies": ["React", "Vite", "CSS3", "JavaScript", "Responsive Design"],
+    "image": "/assets/Project6.png",
+    "live": "https://debby-tech968.github.io/deborah-university-dashboard/",
+    "github": "https://github.com/Debby-Tech968/deborah-university-dashboard"
   }
 ]
